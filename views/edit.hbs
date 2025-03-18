@@ -1,0 +1,25 @@
+<div class=" rounded-3xl justify-center px-72 py-24 min-h-screen">
+  <form action="/property/update-user/{{data._id}}" method="post">
+  <div class="mb-4">
+      <label for="Address" class="block text-gray-300 font-medium mb-2">Address</label>
+      <input value="{{data.displayAddress}}" type="text" id="Address" name="Address" placeholder="Enter your new Address" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+    </div>
+    <div class="mb-4">
+      <label for="price" class="block text-gray-300 font-medium mb-2">Price</label>
+      <input value="{{data.price}}" type="text" id="price" name="price" placeholder="Enter your new price" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+    </div>
+    <div class="mb-4">
+      <label for="bedrooms" class="block text-gray-300 font-medium mb-2">Beds</label>
+      <input value="{{data.bedrooms}}" type="text" id="bedrooms" name="bedrooms" placeholder="Enter your new bedrooms" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+    </div>
+    <div class="mb-4">
+      <label for="bathrooms" class="block text-gray-300 font-medium mb-2">Baths</label>
+      <input value="{{data.bathrooms}}" type="text" id="bathrooms" name="bathrooms" placeholder="Enter your new bathrooms" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+    </div>
+    <div class="mb-4">
+      <label for="size" class="block text-gray-300 font-medium mb-2">size</label>
+      <input value="{{data.size}}" type="text" id="size" name="size" placeholder="Enter your new size" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+    </div>
+    <button type="submit" class="bg-red-500 mx-4 my-2 p-5"> Submit</button>
+  </div>
+</form>

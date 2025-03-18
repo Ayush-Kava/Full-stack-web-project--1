@@ -1,0 +1,124 @@
+{{!-- Image section --}}
+<div class="image h-[500px] w-[800px] md:w-[900px] relative overflow-hidden m-auto mt-5">
+  <div class="slider flex flex-nowrap transition-transform duration-500">
+    {{#each data.images}}
+      <img src="{{this}}" alt="property image" class="object-cover w-full h-full shrink-0">
+    {{/each}}
+  </div>
+  <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md">&lt;</button>
+  <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md">&gt;</button>
+</div>
+
+{{!-- price section --}}
+<div class="flex flex-row m-auto h-auto w-[902px] ">
+  <div class="flex flex-col h-auto w-[600px]">
+    <div class="flex flex-row">
+      <div class="details w-[600px] h-[190px] border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
+        <div class="flex flex-row ">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="ml-2">{{data.displayAddress}}</p>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold mt-4 ">AED
+            {{data.price}}
+            Yearly</h1>
+        </div>
+        <div class="flex flex-row mt-2 items-center">
+          <div class="flex flex-row mt-3 items-center mr-4">
+            <div class="flex mr-2 ">
+              <i class="fa-solid fa-bed"></i>
+            </div>
+            <div class="flex">
+              <p class="font-bold ">{{data.bedrooms}}
+                bed</p>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3 items-center mr-4">
+            <div class="flex mr-2 ">
+              <i class="fa-solid fa-bath"></i>
+            </div>
+            <div class="flex">
+              <p class="font-bold ">{{data.bathrooms}}
+                baths</p>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3 items-center mr-4">
+            <div class="flex mr-2 ">
+              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            </div>
+            <div class="flex">
+              <p class="font-bold">{{data.size}}
+                sqft</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[600px] h-[225px] border-2 border-gray-300 text-gray-300  rounded-md mt-2 p-5">
+      <h2 class="text-1xl font-bold">{{data.title}}</h2>
+      <div class="grid grid-cols-2 grid-rows-3 gap-3 p-4">
+        <div class="left">
+          <div class="flex flex-row">
+            <p class="mr-7">Type</p>
+            <p>{{data.type}}</p>
+          </div>
+          <div class="flex flex-row mt-4">
+            <p class="mr-7">Property Age</p>
+            <p>{{data.property_age}}</p>
+          </div>
+          <div class="flex flex-row mt-4">
+            <p class="mr-7">Updated</p>
+            <p id="timestamp">{{data.updatedAtFormatted}}</p>
+          </div>
+          <div class="flex flex-row mt-4">
+            <p class="mr-7">Posted on</p>
+            <p id="post">{{data.addedOnFormatted}}</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="flex flex-row">
+            <p class="mr-7">Purpose</p>
+            <p>{{data.purpose}}</p>
+          </div>
+          <div class="flex flex-row mt-4">
+            <p class="mr-7">Furnishing</p>
+            <p>{{data.furnished}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
+      <h1 class="font-bold text-2xl ">Amenities</h1>
+      {{#each data.amenities}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+
+    {{!-- About section --}}
+    <div class="details w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
+      <h1 class="text-3xl font-bold mt-4">About this home</h1>
+      <p>{{{data.description}}}</p>
+    </div>
+  </div>
+  <div class="l-div  mt-6">
+    <div class="b-edit flex justify-center">
+      <a href="/property/edit/{{data._id}}">
+        <button class="bg-zinc-500 text-white px-8 py-2 w-48 rounded hover:bg-zinc-900 hover:text-zinc-500 transition-all duration-500">
+            Edit 
+        </button>
+      </a>
+    </div>
+    <div class="w-[300px] h-auto border-2 ml-2 mt-6 p-3 rounded-md border-gray-300 text-gray-300 self-start">
+      <h2 class="text-1xl font-bold">Agent-Detail</h2>
+      <div class="img flex justify-center items-center h-32 w-32 m-auto border-2 border-slate-400 overflow-hidden rounded-full">
+        <img src="{{data.agent_profile_pic}}" alt="agent-pic" class="w-full h-full object-contain">
+      </div>
+      <div class="agent-detail flex flex-col items-center gap-2 p-4 mt-3 m-auto border-2 border-slate-700 rounded-md w-64">
+        <h2 class="text-lg font-bold text-gray-300">{{data.agent_name}}</h2>
+        <h2 class="text-sm text-gray-500">{{data.agency_name}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
