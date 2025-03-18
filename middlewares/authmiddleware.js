@@ -4,6 +4,7 @@ const authMiddleware = (req, res, next) => {
     }
     next(); // Continue if logged in
   };
-  
+
+// this is middleware
 module.exports = {authMiddleware};
   
