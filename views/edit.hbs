@@ -1,8 +1,8 @@
-<div class=" rounded-3xl justify-center px-72 py-24 min-h-screen">
+<div class="mx-12 md:rounded-3xl justify-center md:px-72 py-24 min-h-screen">
   <form action="/property/update-user/{{data._id}}" method="post">
   <div class="mb-4">
       <label for="Address" class="block text-gray-300 font-medium mb-2">Address</label>
-      <input value="{{data.displayAddress}}" type="text" id="Address" name="Address" placeholder="Enter your new Address" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
+      <input value="{{data.displayAddress}}" type="text" id="Address" name="Address" placeholder="Enter your new Address" class="w-full md:w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
     </div>
     <div class="mb-4">
       <label for="price" class="block text-gray-300 font-medium mb-2">Price</label>
@@ -20,6 +20,6 @@
       <label for="size" class="block text-gray-300 font-medium mb-2">size</label>
       <input value="{{data.size}}" type="text" id="size" name="size" placeholder="Enter your new size" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-500">
     </div>
-    <button type="submit" class="bg-red-500 mx-4 my-2 p-5"> Submit</button>
+    <button type="submit" class="rounded-sm bg-red-600 hover:bg-red-700 text-white mx-4 my-2 px-5 py-2"> Submit</button>
   </div>
 </form>

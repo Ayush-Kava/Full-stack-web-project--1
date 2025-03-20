@@ -1,5 +1,6 @@
 {{!-- Image section --}}
-<div class="image h-[500px] w-[800px] md:w-[900px] relative overflow-hidden m-auto mt-5">
+{{!-- <div class="image h-[500px] w-[800px] md:w-[900px] relative overflow-hidden m-auto mt-5"> --}}
+<div class="image h-full w-full sm:w-full md:w-[900px] relative overflow-hidden m-auto mt-5">
   <div class="slider flex flex-nowrap transition-transform duration-500">
     {{#each data.images}}
       <img src="{{this}}" alt="property image" class="object-cover w-full h-full shrink-0">
@@ -10,8 +11,8 @@
 </div>
 
 {{!-- price section --}}
-<div class="flex flex-row m-auto h-auto w-[902px] ">
-  <div class="flex flex-col h-auto w-[600px]">
+<div class="flex flex-col sm:flex-row m-auto h-auto w-full justify-center">
+  <div class="flex flex-col w-full h-auto sm:w-[600px]">
     <div class="flex flex-row">
       <div class="details w-[600px] h-[190px] border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
         <div class="flex flex-row ">
@@ -55,9 +56,9 @@
       </div>
     </div>
 
-    <div class="w-[600px] h-[225px] border-2 border-gray-300 text-gray-300  rounded-md mt-2 p-5">
+    <div class="w-full h-[300px] sm:w-[600px] sm:h-[225px] border-2 border-gray-300 text-gray-300  rounded-md mt-2 p-5">
       <h2 class="text-1xl font-bold">{{data.title}}</h2>
-      <div class="grid grid-cols-2 grid-rows-3 gap-3 p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-3 gap-[0.8vw] p-[2vw]">
         <div class="left">
           <div class="flex flex-row">
             <p class="mr-7">Type</p>
@@ -89,7 +90,7 @@
       </div>
     </div>
 
-    <div class="details w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
+    <div class="details w-full sm:w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
       <h1 class="font-bold text-2xl ">Amenities</h1>
       {{#each data.amenities}}
         <p>{{this}}</p>
@@ -97,19 +98,12 @@
     </div>
 
     {{!-- About section --}}
-    <div class="details w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
+    <div class="details w-full sm:w-[600px] h-auto border-2 border-gray-300 text-gray-300 rounded-md mt-6 p-5">
       <h1 class="text-3xl font-bold mt-4">About this home</h1>
       <p>{{{data.description}}}</p>
     </div>
   </div>
   <div class="l-div  mt-6">
-    <div class="b-edit flex justify-center">
-      <a href="/property/edit/{{data._id}}">
-        <button class="bg-zinc-500 text-white px-8 py-2 w-48 rounded hover:bg-zinc-900 hover:text-zinc-500 transition-all duration-500">
-            Edit 
-        </button>
-      </a>
-    </div>
     <div class="w-[300px] h-auto border-2 ml-2 mt-6 p-3 rounded-md border-gray-300 text-gray-300 self-start">
       <h2 class="text-1xl font-bold">Agent-Detail</h2>
       <div class="img flex justify-center items-center h-32 w-32 m-auto border-2 border-slate-400 overflow-hidden rounded-full">
@@ -119,6 +113,13 @@
         <h2 class="text-lg font-bold text-gray-300">{{data.agent_name}}</h2>
         <h2 class="text-sm text-gray-500">{{data.agency_name}}</h2>
       </div>
+    </div>
+    <div class="b-edit flex justify-center mt-7">
+      <a href="/property/edit/{{data._id}}">
+        <button class="bg-zinc-500 text-white px-8 py-2 w-48 rounded hover:bg-zinc-900 hover:text-zinc-500 transition-all duration-500">
+            Edit 
+        </button>
+      </a>
     </div>
   </div>
 </div>
