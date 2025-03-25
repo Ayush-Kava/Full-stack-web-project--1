@@ -34,7 +34,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 // const static_path = path.join(__dirname, "../views");
 // app.use(express.static(static_path));
 app.use("/",routes);
-// const PORT = 8080;
 app.listen(process.env.PORT, () => {
     console.log(`Server Is Started! at ${process.env.PORT}`);
 })

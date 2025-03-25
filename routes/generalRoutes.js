@@ -39,7 +39,10 @@ router.get("/home",authMiddleware, async (req, res) => {
 });
 
 router.get('/contact',authMiddleware,async(req,res)=>{
-  return res.render("contact.hbs");
+  return res.render("contact.hbs",{
+    layout:"layouts/layout.hbs",
+    isDetailPage: true,
+  });
 });
 
 
