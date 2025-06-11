@@ -23,7 +23,7 @@ router.get("/home",authMiddleware, async (req, res) => {
     const totalItems = await propertyModel.countDocuments(query); // Get total number of items
     const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculate total pages
 
-    const paginatedData = await propertyModel.find(query).skip(skip).limit(itemsPerPage); // Get data for the current page
+    const paginatedData = await propertyModel.find(query).sort({ addedOn: -1 }).skip(skip).limit(itemsPerPage); // Get data for the current page
     if (paginatedData.length === 0) {
       return res.render("index.hbs", {error: "Please increas your budget,sir!!"});
     }
@@ -44,6 +44,8 @@ router.get('/contact',authMiddleware,async(req,res)=>{
     isDetailPage: true,
   });
 });
+
+
 
 
 hbs.registerHelper("range", function (start, end) {

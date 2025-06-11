@@ -1,0 +1,48 @@
+<div class="w-full max-w-6xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md my-32">
+    <h1 class="text-3xl font-bold text-gray-300 mb-6 text-center">
+        Add Property
+    </h1>
+
+    <h3 class="text-gray-400 text-lg mb-4 text-center">
+        add your property details below
+    </h3>
+
+<form action="/property/addproperty" method="post" enctype="multipart/form-data" >
+
+    <label for="image" class="block text-gray-400 mb-2">Property Image</label>
+    <input type="file" id="image" name="image" class="border border-gray-600 rounded-md p-2 w-full" required>
+
+    <label for="address" class="block text-gray-400 mb-2 mt-5">Enter property address</label>
+    <input type="text" id="address" name="address" class="border border-gray-600 rounded-md p-2 w-full bg-transparent text-gray-300" required>
+
+    <label for="price" class="block text-gray-400 mb-2 mt-5">Enter property price</label>
+    <input type="text" id="price" name="price" class="border border-gray-600 rounded-md p-2 w-full bg-transparent text-gray-300" required>
+
+    <label for="beds" class="block text-gray-400 mb-2 mt-5">Enter property beds</label>
+    <input type="number" id="beds" name="beds" class="border border-gray-600 rounded-md p-2 w-full bg-transparent text-gray-300" required>
+
+    <label for="baths" class="block text-gray-400 mb-2 mt-5">Enter property baths</label>
+    <input type="number" id="baths" name="baths" class="border border-gray-600 rounded-md p-2 w-full bg-transparent text-gray-300" required>
+
+    <label for="size" class="block text-gray-400 mb-2 mt-5">Enter property size</label>
+    <input type="number" id="size" name="size" class="border border-gray-600 rounded-md p-2 w-full bg-transparent text-gray-300" required>
+
+    <button type="submit" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full">
+        Add Property
+    </button>
+</form>
+
+    {{!-- Display any error messages --}}
+    {{#if error}}
+        <div class="mt-4 text-red-500 text-center">
+            {{error}}
+        </div>
+    {{/if}}
+
+    {{!-- Display success message --}}
+    {{#if success}}
+        <div class="mt-4 text-green-500 text-center">
+            {{success}}
+        </div>
+    {{/if}}
+</div>

@@ -114,10 +114,15 @@
         <h2 class="text-sm text-gray-500">{{data.agency_name}}</h2>
       </div>
     </div>
-    <div class="b-edit flex justify-center mt-7">
+    <div class="b-edit flex justify-center mt-7 flex-col gap-4 ml-[4.3rem]">
       <a href="/property/edit/{{data._id}}">
         <button class="bg-zinc-500 text-white px-8 py-2 w-48 rounded hover:bg-zinc-900 hover:text-zinc-500 transition-all duration-500">
             Edit 
+        </button>
+      </a>
+      <a href="/property/delete/{{data._id}}">
+        <button class="bg-zinc-500 text-white px-8 py-2 w-48 rounded hover:bg-zinc-900 hover:text-zinc-500 transition-all duration-500">
+            Delete 
         </button>
       </a>
     </div>
